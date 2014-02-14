@@ -78,7 +78,7 @@ public class MainActivity extends ActionBarActivity {
                     terrainType
             );
             Intent intent = new Intent(MainActivity.this, MapActivity.class);
-            intent.putExtra("Board", newBoard);
+            intent.putExtra(MapActivity.BOARD_KEY, newBoard);
             startActivity(intent);
         }
     }

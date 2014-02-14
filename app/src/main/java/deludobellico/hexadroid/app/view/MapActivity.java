@@ -16,13 +16,15 @@ import deludobellico.hexadroid.app.map.Board;
 
 public class MapActivity extends ActionBarActivity {
 
+    public static String BOARD_KEY = "BOARD";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
         if (savedInstanceState == null) {
-            Board board = (Board) getIntent().getSerializableExtra("Board");
+            Board board = (Board) getIntent().getSerializableExtra(BOARD_KEY);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment(board))
                     .commit();
